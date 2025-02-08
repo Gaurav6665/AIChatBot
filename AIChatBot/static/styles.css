@@ -1,0 +1,93 @@
+:root {
+    --main-color: #4d6bfe;
+    --main-color-hover: #4166d5;
+    --background-color: #f4f4f9;
+    --container-bg: #fff;
+    --text-color: #333;
+    --border-color: #ccc;
+    --input-bg: #f9f9f9;
+    --input-border: #dce0e9;
+    --button-bg: var(--main-color);
+    --button-bg-hover: var(--main-color-hover);
+    --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', Oxygen, 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.input-section {
+    background-color: var(--container-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+}
+
+.response-section {
+    flex: 1;
+    background-color: var(--container-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-color);
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: var(--button-bg-hover);
+}
+
+#response {
+    white-space: pre-wrap;
+    background-color: var(--input-bg);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}

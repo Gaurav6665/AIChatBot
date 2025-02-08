@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Helper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="response-section" id="response-section">
+            <h2>Punchiye Gaurav Ji</h2>
+            <div id="response"></div>
+        </div>
+        <div class="input-section">
+            <form id="chat-form">
+                <textarea id="input_text" name="input_text" placeholder="Enter your code or prompt here..."></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const inputText = document.getElementById('input_text').value;
+
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `input_text=${encodeURIComponent(inputText)}`,
+            })
+            .then(response => response.json())
+            .then(data => {
+                const responseDiv = document.getElementById('response');
+                responseDiv.innerText = data.response;
+                document.getElementById('input_text').value = '';
+            });
+        });
+    </script>
+</body>
+</html>
